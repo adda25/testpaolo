@@ -7,7 +7,7 @@
 </template>
 
 <script>
-
+import axios from 'axios'
 
 export default {
   name: 'App',
@@ -20,7 +20,7 @@ export default {
     bio: {}
   }),
   mounted () {
-    this.$axios.get('/api/textbio').then(function (res) {
+    axios.get('/api/textbio').then(function (res) {
       this.bio = res.data
     }.bind(this))
   }
